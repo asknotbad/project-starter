@@ -1,0 +1,22 @@
+{
+  "name": "starter",
+  "version": "0.0.1",
+  "description": "Project starter",
+  "author": "Den Kochetkov <d@asknotbad.com> (https://asknotbad.com)",
+  "private": false,
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d",
+    "stop": "docker compose -f docker-compose.yml -f docker-compose.prod.yml down",
+    "start:dev": "docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d",
+    "dev": "npm run start:dev",
+    "stop:dev": "docker compose -f docker-compose.yml -f docker-compose.dev.yml down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asknotbad/project-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/asknotbad/project-starter/issues"
+  }
+}

@@ -1,0 +1,28 @@
+name: ${DOCKER_NAME}
+
+services:
+  web:
+    container_name: web-service
+    restart: always
+    build:
+      context: ./web-service
+    ports:
+      - ${WEB_PORT}:5173
+      - 24678:24678
+    volumes:
+      - ./web-service:/app
+      - /app/node_modules
+      - /app/.sessions
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      PUBLIC_APP_HOST: ${WEB_HOST}
+
+  traefik:
+    image: traefik:v3.2.2
+    container_name: traefik-service
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - web
