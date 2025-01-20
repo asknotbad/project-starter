@@ -1,0 +1,27 @@
+# App data
+/traefik-service/letsencrypt/
+
+# Dependencies
+**/node_modules
+
+# System files
+.DS_Store
+Thumbs.db
+
+# misc
+*.log
+/tmp
+*.old
+*.bak
+
+# IDE
+/.idea
+/.awcache
+/.vscode
+/.nova
+*.code-workspace
+
+.env
+
+/tmp
+*.old
